@@ -1,0 +1,25 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  username: wvhreikcektlfj
+
+development:
+  <<: *defaults
+  database: dmvpdjhiehj4
+
+test:
+  <<: *defaults
+  database: dmvpdjhiehj4
+
+staging:
+  <<: *defaults
+  database: dmvpdjhiehj4
+  password: 52031846057c07230621e56e59930a66cf84132e08313345a743f099be5d7836
+
+production:
+  <<: *defaults
+  database: dmvpdjhiehj4
+  password: 52031846057c07230621e56e59930a66cf84132e08313345a743f099be5d7836
+
