@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
+  root 'homepages#index'
   devise_for :users
-  root 'welcome#index'
 end

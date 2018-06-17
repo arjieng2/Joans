@@ -2,16 +2,15 @@
 <html>
 	<head>
 		<title>Joan's System</title>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	</head>
-	<body>
+     
+	<body style="background-color:<%= current_user.nil? ? "#7f7f7f" : "white" %>;" >
 		<% if !current_user.nil? %>
 			<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 			<%= yield %>
 		<% else %>
-
 			<div class="container" style="margin-top: 0px; width: 100%;">
 				<div class="loginmodal-container">
 					<h1>Joan's Printing Press</h1><br>
@@ -22,17 +21,14 @@
 					<% end %>
 
 					<% flash.each do |name, msg| %>
-						<% if name == "alert" %>
-							<center style="margin-top: 5px; color: red;"><%= msg %></center>
-						<% elsif name == "notice" %>
-							<center style="margin-top: 5px; color: green;"><%= msg %></center>
-						<%end%>
-						
+						<center style="margin-top: 5px; color: <%= name == "alert" ? :red : :green %>;">
+							<%= msg %>
+						</center>
 					<% end %>
 					
 				</div>
 			</div>
-
 		<% end %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	</body>
 </html>
