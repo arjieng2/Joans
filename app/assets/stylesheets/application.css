@@ -17,10 +17,6 @@
   /*add this one '*= require_tree .' without quoutes */
 
 
-html, body, .container {
-    height: 100%;
-}
-
 .container {
     display: flex;
     align-items: center;
