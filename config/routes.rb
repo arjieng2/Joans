@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get 'users' => 'homepages#users'
   get 'settings' => 'homepages#settings'
-
+  post 'update_settings' => 'homepages#update_settings'
   devise_for :users
 end
